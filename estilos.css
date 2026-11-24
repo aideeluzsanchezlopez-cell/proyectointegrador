@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap");
+
+@font-face { font-family: "Faster Break"; src: url("fasterbreak.otf") format("opentype"); }
+@font-face { font-family: "Lostar"; src: url("lostar.ttf") format("truetype"); }
+
+:root { --rojo: #ca0109; --negro: #000000; --blanco: #ffffff; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.15rem;
+  background: var(--negro);
+  color: var(--blanco);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Luces blancas que flotan por el fondo uwuwuw */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 60vmax;
+  height: 60vmax;
+  background: radial-gradient(circle, rgba(94, 33, 41), transparent 65%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::before {
+  top: -20vmax;
+  left: -20vmax;
+  animation: flotar 14s ease-in-out infinite;
+}
+
+body::after {
+  bottom: -25vmax;
+  right: -25vmax;
+  animation: flotar2 18s ease-in-out infinite;
+}
+
+header { text-align: center; padding: 4.5rem 1rem 2rem; }
+
+/* Línea roja bajo el título kiut*/
+header::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 1.4rem auto 0;
+  background: var(--rojo);
+}
+
+h1 {
+  font-family: "Lostar", Impact, sans-serif;
+  font-size: clamp(2.8rem, 9vw, 6rem);
+  font-weight: normal;
+  animation: glitch 3s infinite;
+}
+
+header p { letter-spacing: 5px; margin-top: .8rem; }
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.6rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+main a {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+  min-height: 150px;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--blanco);
+  font-family: "Faster Break", Impact, sans-serif;
+  font-size: 1.5rem;
+  border: 2px solid var(--blanco);
+  transition: border-color .3s;
+  animation: entrada-izq .7s backwards;
+}
+
+main a:nth-child(even) { animation-name: entrada-der; }
+
+/* Relleno rojo en los cuadros cawn */
+main a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--rojo);
+  transform: translateX(-101%);
+  transition: transform .4s;
+  z-index: -1;
+}
+
+main a:hover,
+main a:focus-visible {
+  border-color: var(--rojo);
+  outline: none;
+}
+
+main a:hover::before,
+main a:focus-visible::before { transform: translateX(0); }
+
+main a[target]::after {
+
+  font-family: "Rajdhani", sans-serif;
+  font-size: .9rem;
+  letter-spacing: 2px;
+  color: var(--rojo);
+  transition: color .3s;
+}
+
+main a[target]:hover::after { color: var(--blanco); }
+
+/* diseño de pagss */
+.pagina {
+  max-width: 700px;
+  margin: 1rem auto 3rem;
+  padding: 2rem;
+  border-left: 6px solid var(--rojo);
+  background: rgba(255, 255, 255, .06);
+  animation: entrada-izq .7s backwards;
+}
+
+.pagina h2 { font-family: "Faster Break", Impact, sans-serif; font-weight: normal; margin-bottom: .8rem; }
+.pagina p  { line-height: 1.6; margin-bottom: 1.5rem; }
+
+.volver {
+  display: inline-block;
+  padding: .6rem 1.4rem;
+  color: var(--blanco);
+  background: var(--rojo);
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform .25s, background .25s, color .25s;
+}
+
+.volver:hover { transform: translateX(-8px); background: var(--blanco); color: var(--negro); }
+
+@keyframes flotar {
+  0%, 100% { transform: translate(0, 0); }
+  33%      { transform: translate(70vw, 20vh); }
+  66%      { transform: translate(30vw, 70vh); }
+}
+
+@keyframes flotar2 {
+  0%, 100% { transform: translate(0, 0); }
+  33%      { transform: translate(-60vw, -30vh); }
+  66%      { transform: translate(-20vw, -70vh); }
+}
+
+@keyframes entrada-izq {
+  from { opacity: 0; transform: translateX(-60px); }
+}
+
+@keyframes entrada-der {
+  from { opacity: 0; transform: translateX(60px); }
+}
+
+@keyframes glitch {
+  0%, 80%, 100% { text-shadow: 3px 0 var(--rojo); transform: none; }
+  82% { text-shadow: -8px 0 var(--rojo), 8px 0 var(--blanco); transform: translateX(5px) skewX(-8deg); }
+  84% { text-shadow: 8px 0 var(--rojo), -8px 0 var(--blanco); transform: translateX(-5px); }
+  86% { text-shadow: -5px 0 var(--rojo), 5px 0 var(--blanco); transform: translateX(3px) skewX(6deg); }
+  88% { text-shadow: 6px 0 var(--rojo), -6px 0 var(--blanco); transform: translateX(-3px); }
+  90% { text-shadow: 3px 0 var(--rojo); transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

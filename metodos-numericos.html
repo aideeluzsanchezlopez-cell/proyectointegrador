@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" href="Kal.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Métodos numéricos</title>
+  <link rel="stylesheet" href="estilo2.css">
+</head>
+<body>
+ 
+    <header>
+        <div class="logo-contenedor">
+            <img src="logo.png" alt="Logo B'ASICS" class="logo">
+        </div>
+
+        <div class="encabezado-texto">
+            <p class="etiqueta">PROYECTO INTEGRADOR</p>
+            <h1>Predicción de ventas</h1>
+            <p>Calculadora mediante el método de mínimos cuadrados</p>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="introduccion">
+            <span class="numero-seccion">01 / ANÁLISIS</span>
+            <h2>Calcula tus resultados</h2>
+            <p>
+                Ingresa las ventas de los últimos 10 meses para
+                obtener una estimación de las ventas del siguiente mes.
+            </p>
+        </section>
+
+        <section class="formulario">
+            <div class="titulo-seccion">
+                <h2>Datos de ventas</h2>
+                <span>10 MESES</span>
+            </div>
+
+            <div id="datos">
+                <input type="number" class="venta" placeholder="Mes 1" min="0">
+                <input type="number" class="venta" placeholder="Mes 2" min="0">
+                <input type="number" class="venta" placeholder="Mes 3" min="0">
+                <input type="number" class="venta" placeholder="Mes 4" min="0">
+                <input type="number" class="venta" placeholder="Mes 5" min="0">
+                <input type="number" class="venta" placeholder="Mes 6" min="0">
+                <input type="number" class="venta" placeholder="Mes 7" min="0">
+                <input type="number" class="venta" placeholder="Mes 8" min="0">
+                <input type="number" class="venta" placeholder="Mes 9" min="0">
+                <input type="number" class="venta" placeholder="Mes 10" min="0">
+            </div>
+
+            <button id="calcular">CALCULAR PREDICCIÓN ↗</button>
+        </section>
+
+        <section class="resultados">
+            <span class="numero-seccion">02 / RESULTADOS</span>
+            <h2>Análisis de resultados</h2>
+
+            <div class="resultados-grid">
+
+                <div class="resultado">
+                    <span>Pendiente (b)</span>
+                    <strong id="pendiente">--</strong>
+                </div>
+
+                <div class="resultado">
+                    <span>Ordenada al origen (a)</span>
+                    <strong id="ordenada">--</strong>
+                </div>
+
+                <div class="resultado">
+                    <span>Correlación (r)</span>
+                    <strong id="correlacion">--</strong>
+                </div>
+
+                <div class="resultado destacado">
+                    <span id="tituloPrediccion">Predicción del mes 11</span>
+                    <strong id="prediccion">--</strong>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <span class="numero-seccion">03 / PROCEDIMIENTO</span>
+            <h2>Tabla de operaciones</h2>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>X</th>
+                            <th>Y</th>
+                            <th>X²</th>
+                            <th>Y²</th>
+                            <th>XY</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="cuerpoTabla"></tbody>
+
+                    <tfoot>
+                        <tr>
+                            <th>ΣX</th>
+                            <th>ΣY</th>
+                            <th>ΣX²</th>
+                            <th>ΣY²</th>
+                            <th>ΣXY</th>
+                        </tr>
+
+                        <tr>
+                            <td id="sumaX">--</td>
+                            <td id="sumaY">--</td>
+                            <td id="sumaX2">--</td>
+                            <td id="sumaY2">--</td>
+                            <td id="sumaXY">--</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <span class="numero-seccion">04 / DESARROLLO</span>
+            <h2>Desarrollo de fórmulas</h2>
+
+            <div id="desarrollo">
+                <p>
+                    Ingresa las ventas y presiona el botón
+                    para visualizar el procedimiento matemático.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>B'ASICS — PROYECTA TU CARÁCTER</p>
+        <span>PROYECTO INTEGRADOR</span>
+    </footer>
+
+    <script src="script2.js"></script>
+
+</body>
+</html>

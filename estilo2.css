@@ -1,0 +1,284 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f3f1;
+    color: #211d1e;
+}
+
+/* ENCABEZADO */
+header {
+    background: #ffffff;
+    padding: 35px 8%;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    border-bottom: 1px solid #dedada;
+}
+
+.logo-contenedor {
+    width: 150px;
+    flex-shrink: 0;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.encabezado-texto h1 {
+    font-size: 36px;
+    text-transform: uppercase;
+    margin: 10px 0;
+    letter-spacing: -1px;
+}
+
+.encabezado-texto p {
+    color: #777;
+    font-size: 14px;
+}
+
+.etiqueta {
+    color: #c7192e !important;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+/* CONTENIDO */
+main {
+    max-width: 1050px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    background: #ffffff;
+    padding: 35px;
+    margin-bottom: 25px;
+    border: 1px solid #e5e0e0;
+}
+
+/* TEXTOS */
+.numero-seccion {
+    color: #c7192e;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 25px;
+    margin: 15px 0;
+    text-transform: uppercase;
+}
+
+.introduccion p {
+    color: #777;
+    line-height: 1.7;
+    max-width: 650px;
+}
+
+/* FORMULARIO */
+.titulo-seccion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.titulo-seccion span {
+    color: #c7192e;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#datos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd5d5;
+    background: #faf9f9;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #c7192e;
+}
+
+/* BOTÓN */
+button {
+    width: 100%;
+    padding: 17px;
+    margin-top: 25px;
+    border: none;
+    background: #c7192e;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #951224;
+}
+
+/* RESULTADOS */
+.resultados-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.resultado {
+    background: #f5f3f1;
+    padding: 25px;
+    border-left: 4px solid #211d1e;
+}
+
+.resultado span {
+    display: block;
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.resultado strong {
+    font-size: 26px;
+}
+
+.resultado.destacado {
+    background: #c7192e;
+    border-left: 4px solid #211d1e;
+    color: white;
+}
+
+.resultado.destacado span {
+    color: #ffffff;
+}
+
+.resultado.destacado strong {
+    font-size: 32px;
+}
+
+/* TABLA */
+.tabla-contenedor {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th, td {
+    padding: 13px;
+    border: 1px solid #e5e0e0;
+}
+
+thead {
+    background: #211d1e;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background: #f5f3f1;
+}
+
+tfoot {
+    background: #eee8e8;
+    font-weight: bold;
+}
+
+/* FORMULAS */
+#desarrollo {
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+#desarrollo h3 {
+    color: #c7192e;
+    margin: 20px 0 10px;
+}
+
+#desarrollo p {
+    margin: 8px 0;
+}
+
+#desarrollo strong {
+    color: #c7192e;
+    font-size: 18px;
+}
+
+#desarrollo hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 25px 0;
+}
+
+/* PIE DE PAGINA */
+footer {
+    background: #211d1e;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: 50px;
+}
+
+footer p {
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+footer span {
+    display: block;
+    color: #c7192e;
+    font-size: 11px;
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
+
+/* CELULARES */
+@media (max-width: 650px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo-contenedor {
+        width: 125px;
+    }
+
+    .encabezado-texto h1 {
+        font-size: 27px;
+    }
+
+    section {
+        padding: 22px;
+    }
+
+    #datos,
+    .resultados-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+}
